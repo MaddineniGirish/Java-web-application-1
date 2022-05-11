@@ -13,4 +13,6 @@ In this Project,
 
 => Configured the deploy to container plugin and given tomcat server details to Deploy the application in tomcat.
 
-=> Now we can access the application from context path of the application or final build name that configured in the pom.xml using tomcat server dns or ip
+=> Now i can access the application from context path of the application or final build name that configured in the pom.xml using tomcat server dns or ip
+      
+      eg: 172.168.0.1:8080
