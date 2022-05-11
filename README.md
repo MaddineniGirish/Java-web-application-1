@@ -1,6 +1,8 @@
 # Java-web-application
 Java web application repo for CI/CD Pipeline.
+
 In this Project,
+
 => I used Jenkins as a CI/CD tool by writing a pipeline to fetch the code from github by enabling Webhook trigger to start the build whenever changes made to repo.
 
 => Configured Maven using jenkins global tool config to run the builds.
