@@ -157,7 +157,7 @@
 					    <review.team>qa</review.team>
 					</deployProperties>
 					<publisher>
-					    <contextUrl>http://3.143.25.73:8081/artifactory/</contextUrl>
+					    <contextUrl>http://18.189.143.52:8081/artifactory/</contextUrl>
 					    <username>admin</username>
 					    <password>Nani@4041</password>
 					    <repoKey>java-web-app-libs-release-local</repoKey>
