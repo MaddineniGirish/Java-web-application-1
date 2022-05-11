@@ -92,13 +92,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Release Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/maven-libs-release-local/</url>
+	      <url>http://54.255.174.111:8081/repository/java-web-app-libs-release-local/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/maven-libs-snapshot-local</url>
+	      <url>http://54.255.174.111:8081/repository/java-web-app-libs-snapshot-local/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
@@ -160,8 +160,8 @@
 					    <contextUrl>http://3.143.25.73:8081/artifactory/</contextUrl>
 					    <username>admin</username>
 					    <password>Nani@4041</password>
-					    <repoKey>maven-libs-release-local</repoKey>
-					    <snapshotRepoKey>maven-libs-snapshot-local</snapshotRepoKey>
+					    <repoKey>java-web-app-libs-release-local</repoKey>
+					    <snapshotRepoKey>java-web-app-libs-snapshot-local</snapshotRepoKey>
 					</publisher>
 				    </configuration>
 				</execution>
