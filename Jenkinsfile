@@ -1,6 +1,7 @@
 node {
     
     def mvnhome = tool name: "maven"
+    properties([pipelineTriggers([githubPush()])])
     
     stage ("checkoutcode"){
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MaddineniGirish/Java-web-application-2.git']]])
