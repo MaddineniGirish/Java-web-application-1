@@ -24,4 +24,12 @@ node {
     stage ("Tomcat deploy"){
         deploy adapters: [tomcat8(credentialsId: 'a83025ff-65b6-47e5-9514-2005d6be30b7', path: '', url: 'http://18.189.143.52:8080')], contextPath: null, war: '**/*.war'
     }
+    
+    post {
+	    always {
+            wrap([$class: 'BuildUser']){
+                slackSend(channel: "#general", message: "Status: ${currentBuild.currentResult}, USER: ${BUILD_USER}, Build_ID: #${env.BUILD_ID}, JOB_NAME: ${env.JOB_NAME}, URL: <${env.BUILD_URL}|(Open)>")
+            }
+        }
+    }   
 }
