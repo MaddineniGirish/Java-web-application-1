@@ -26,7 +26,7 @@ node {
     }
     
     post {
-	    always {
+    	always {
             wrap([$class: 'BuildUser']){
                 slackSend(channel: "#general", message: "Status: ${currentBuild.currentResult}, USER: ${BUILD_USER}, Build_ID: #${env.BUILD_ID}, JOB_NAME: ${env.JOB_NAME}, URL: <${env.BUILD_URL}|(Open)>")
             }
