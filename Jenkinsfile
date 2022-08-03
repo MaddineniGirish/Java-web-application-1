@@ -25,11 +25,20 @@ node {
         deploy adapters: [tomcat8(credentialsId: 'a83025ff-65b6-47e5-9514-2005d6be30b7', path: '', url: 'http://18.189.143.52:8080')], contextPath: null, war: '**/*.war'
     }
     
-    post {
-    	always {
+   post {
+        success {
             wrap([$class: 'BuildUser']){
-                slackSend(channel: "#general", message: "Status: ${currentBuild.currentResult}, USER: ${BUILD_USER}, Build_ID: #${env.BUILD_ID}, JOB_NAME: ${env.JOB_NAME}, URL: <${env.BUILD_URL}|(Open)>")
+                slackSend(channel: "#general", color: "good",  message: "Status: ${currentBuild.currentResult}, USER: ${BUILD_USER}, Build_ID: #${env.BUILD_ID}, JOB_NAME: ${env.JOB_NAME}, URL: <${env.BUILD_URL}|(Open)>")
             }
         }
-    }   
+        failure {
+            wrap([$class: 'BuildUser']){
+                slackSend(channel: "#general", color: "#FF0000" , message: "Status: ${currentBuild.currentResult}, USER: ${BUILD_USER}, Build_ID: #${env.BUILD_ID}, JOB_NAME: ${env.JOB_NAME}, URL: <${env.BUILD_URL}|(Open)>")
+            }
+        }
+        unstable {
+            wrap([$class: 'BuildUser']){
+                slackSend(channel: "#general", color: "#FFBF00" , message: "Status: ${currentBuild.currentResult}, USER: ${BUILD_USER}, Build_ID: #${env.BUILD_ID}, JOB_NAME: ${env.JOB_NAME}, URL: <${env.BUILD_URL}|(Open)>")
+            }
+        } 
 }
